@@ -5,17 +5,25 @@
 //= require fotorama
 //= require_tree .
 
+var $fotorama = 0;
 $(function(){
     var $fotoramaDiv = $('#fotorama').fotorama();
-    var fotorama = $fotoramaDiv.data('fotorama');
+    $fotorama = $fotoramaDiv.data('fotorama');
+    $('[data-page]').hide();
+    $('[data-page='+$fotorama.activeIndex+']').show();
 
     $('span.left').click(function(e){
         e.preventDefault;
-        fotorama.show('<');
+        $fotorama.show('<');
+        $('[data-page]').hide();
+        $('[data-page='+$fotorama.activeIndex+']').show();
+
     });
     $('span.right').click(function(e){
         e.preventDefault;
-        fotorama.show('>');
+        $fotorama.show('>');
+        $('[data-page]').hide();
+        $('[data-page='+$fotorama.activeIndex+']').show();
     });
 
     $('a.submit').click(function(){
@@ -24,6 +32,7 @@ $(function(){
     $('a.attach').click(function(){
         $('input[type="file"]').click();
     });
+
 
 
 });
