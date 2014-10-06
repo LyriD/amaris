@@ -1,0 +1,31 @@
+cs:
+  refinery:
+    plugins:
+      people:
+        title: People
+    people:
+      admin:
+        people:
+          actions:
+            create_new: Přidat Person
+            reorder: Řadit People
+            reorder_done: Konec řazení People
+          records:
+            title: People
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné People. Zvolte "Přidat Person" pro přidání prvního person.
+          person:
+            view_live_html: Zobrazit náhled person<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit person
+            delete: Smazat person
+      people:
+        show:
+          other: Další People
+  activerecord:
+    attributes:
+      'refinery/people/person':
+        first_name: First Name
+        last_name: Last Name
+        avatar: Avatar
+        short_comment: Short Comment
+        full_comment: Full Comment

@@ -1,0 +1,31 @@
+it:
+  refinery:
+    plugins:
+      people:
+        title: People
+    people:
+      admin:
+        people:
+          actions:
+            create_new: Aggiungi Nuovo Person
+            reorder: Riordina People
+            reorder_done: Termina il Riordino di People
+          records:
+            title: People
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora People. Clicca "Aggiungi Nuovo Person" per aggiungere il tuo primo person.
+          person:
+            view_live_html: Guarda live questo person <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo person
+            delete: Rimuovi per sempre questo person
+      people:
+        show:
+          other: Altri People
+  activerecord:
+    attributes:
+      'refinery/people/person':
+        first_name: First Name
+        last_name: Last Name
+        avatar: Avatar
+        short_comment: Short Comment
+        full_comment: Full Comment

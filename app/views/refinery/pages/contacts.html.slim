@@ -1,0 +1,9 @@
+- content_for :bodyClass, 'contacts'
+h1 Контакты
+.content
+  .left
+    = raw @page.content_for(:left)
+  .right
+    = raw @page.content_for(:right)
+.map
+  = raw @page.content_for(:map_script)

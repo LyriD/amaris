@@ -1,0 +1,15 @@
+<% if @posts.many? %>
+  <h2><%= t('.other') %></h2>
+  <ul id="blog_posts">
+    <% @posts.each do |blog_post| %>
+      <li class='clearfix'>
+        <%= link_to blog_post.title, refinery.blog_post_path(blog_post) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<p class="slogan">“ Мы любим клиентов и работаем с любыми<br>бюджетами...главное, чтобы они были<br>выше 50 000 рублей ”</p>
+
+<p class="phone garamond"><span>495</span>917-02-28</p>

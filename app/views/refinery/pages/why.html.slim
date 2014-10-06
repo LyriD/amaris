@@ -1,0 +1,25 @@
+- content_for :bodyClass, 'why'
+.circle.c-1
+  h2
+    span
+      ' Чёткость
+    | линий
+  =raw  @page.content_for(:circle1)
+.circle.c-2
+  h2
+    span
+      ' Любовь
+    br к экспериментам
+  =raw @page.content_for(:circle2)
+.circle.c-3
+  h2
+    span
+      ' Прозрачность
+    | красок
+  =raw @page.content_for(:circle3)
+.circle.c-4
+  h2
+    span
+      ' Галерея
+    | работ
+  =raw @page.content_for(:circle4)

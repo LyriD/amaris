@@ -1,0 +1,9 @@
+a#logo href="/" Организация мероприятий
+ul#mainMenu
+  = Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html
+  /li: a href="#" почему мы
+  /li.active: a href="#" портфолио
+  /li: a href="#" презентация
+  /li: a href="#" контакты
+  /li: a href="#" клиенты
+  /li: a href="#" команда

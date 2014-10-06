@@ -1,0 +1,18 @@
+#portfolios
+  menu
+    li: a href="/portfolio" class="#{raw('selected') unless @category}" все
+    - Refinery::Blog::Category.all.each do |c|
+      li
+        =link_to c.title, "/portfolio/categories/#{c.id}", class: "#{raw('selected') if @category && @category.id == c.id}"
+  ul#portfolioItems.clearfix
+    - count = 4 - (@posts.count%4)
+    - count = (count==4)? 0 : count
+    - @posts.each do |p|
+      li
+        a href="/portfolio/#{p.id}"
+          .normal
+            =image_tag(p.teaser_image.thumbnail(geometry: "227x227#c").url) if p.teaser_image
+          .hover
+            h2=p.title
+    - count.times do
+      li.cap

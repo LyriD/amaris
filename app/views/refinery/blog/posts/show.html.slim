@@ -1,0 +1,17 @@
+#portfolio.clearfix
+  a.prev href="#{(@post.next_in_category)? "/portfolio/#{@post.next_in_category.id}" : "/portfolio/categories/#{@post.categories.first.id}"}"
+  a.next href="#{(@post.prev_in_category)? "/portfolio/#{@post.prev_in_category.id}" : "/portfolio/categories/#{@post.categories.first.id}"}"
+  .left
+    = image_tag @post.teaser_image.thumbnail(geometry: "200x200#c").url, class: 'teaser'
+    time
+      .date=I18n.l(@post.published_at, :format => '%d', :locale => :ru)
+      .month=I18n.l(@post.published_at, :format => '%B', :locale => :ru)
+      .year=I18n.l(@post.published_at, :format => '%Y', :locale => :ru)
+  .container
+    h1=@post.title
+    =raw @post.body
+    ul.fancy
+      - @post.images.each do |image|
+        li: a.fancybox rel="gallery" href="#{image.thumbnail(geometry: "600x600>").url}": img src="#{image.thumbnail(geometry: "227x227#c").url}"
+
+

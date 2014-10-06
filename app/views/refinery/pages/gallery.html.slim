@@ -1,0 +1,13 @@
+- content_for :bodyClass, 'gallery'
+- @page.children.each_with_index do |page, i|
+  h1 data-page="#{i}" = page.title
+.sliderContainer
+  #fotorama data-nav="thumbs" data-width="940" data-height="400" data-arrows="false" data-thumbheight="66" data-thumbwidth="190"
+    - @page.children.each_with_index do |page, i|
+      = image_tag page.images.first.thumbnail(geometry: "940x400#c").url, data: {page: i}
+  span.left href="#"
+  span.right href="#"
+
+- @page.children.each_with_index do |page, i|
+  .content data-page="#{i}"
+    = raw page.content_for(:body)

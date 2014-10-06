@@ -1,0 +1,6 @@
+- content_for :bodyClass, 'clients'
+h1 Наши клиенты
+ul
+  - @page.images.each do |image|
+    li: a href="#"
+      = image_tag image.thumbnail(geometry: "190x190>").url
