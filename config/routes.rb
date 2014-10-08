@@ -9,15 +9,15 @@ Vertcomm::Application.routes.draw do
 
   Refinery::Core::Engine.routes.prepend do
 
-    get '/portfolio' => 'blog/posts#index'
-    get '/portfolio/categories/:id(.:format)' => 'blog/categories#show'
-    get '/portfolio/:id(.:format)' => 'blog/posts#show'
+    # get '/portfolio' => 'blog/posts#index'
+    get '/services/:id(.:format)' => 'blog/categories#show'
+    # get '/portfolio/:id(.:format)' => 'blog/posts#show'
 
-    get '/contacts', :to => 'pages#contacts', :as => :about_us
-    get '/services', :to => 'pages#services', :as => :services
-    get '/why_us', :to => 'pages#why_us', :as => :why_us
-    get '/clients', :to => 'pages#clients', :as => :clients
-    get '/team', :to => 'pages#team', :as => :team
+    # get '/contacts', :to => 'pages#contacts', :as => :about_us
+    # get '/services', :to => 'pages#services', :as => :services
+    # get '/why_us', :to => 'pages#why_us', :as => :why_us
+    # get '/clients', :to => 'pages#clients', :as => :clients
+    # get '/team', :to => 'pages#team', :as => :team
 
 
   end

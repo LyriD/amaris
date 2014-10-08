@@ -1,6 +1,13 @@
 module ApplicationHelper
 
-
+  def cl_helper(category)
+    cl_helper = case category.id
+        when 1 then 'mass'
+        when 2 then 'corp'
+        when 3 then 'bus'
+     end
+    cl_helper
+end
 
   def garamond_menu
 

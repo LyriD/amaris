@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141006162318) do
+ActiveRecord::Schema.define(:version => 20141007153640) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(:version => 20141006162318) do
     t.boolean  "spam",       :default => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.string   "file_id"
   end
 
   add_index "refinery_inquiries_inquiries", ["id"], :name => "index_refinery_inquiries_inquiries_on_id"

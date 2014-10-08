@@ -1,1 +1,21 @@
-= render 'refinery/blog/posts/index'
+- content_for :bodyClass, "posts #{cl_helper(@category)}"
+/ используй доп классы "mass" "corp" "bus" для отображения страницы массовых событий, корпоративов и деловых мероприятий соответственно
+.container
+  a.circle.order href="/contact" Заказать мероприятие
+  a.circle.corp href="/services/2"
+    span
+      ' Корпоративные
+    | праздники
+  a.circle.bus href="/services/3"
+    span
+      ' Деловые
+    | мероприятия
+  a.circle.mass href="/services/1"
+    span
+      ' Массовые
+    | события
+  - @posts.each do |post|
+    section
+      h1 = post.title
+      = raw post.custom_teaser
+      a.more href="#" Продолжить чтение

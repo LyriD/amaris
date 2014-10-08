@@ -1,12 +1,15 @@
 - content_for :bodyClass, 'feedback'
+- @inquiry = Refinery::Inquiries::Inquiry.new
 h1 Заявка на организацию мероприятия
-form
+= form_for [refinery, :inquiries, @inquiry] do |f|
   .formContainer
-    input placeholder="Ваше имя"
-    input.error placeholder="телефон"
-    input.ok placeholder="Ваш email"
-    textarea placeholder="Ваши пожелания"
+    = f.text_field :name, placeholder: "Ваше имя"
+    = f.text_field :phone, placeholder: "Телефон"
+    = f.text_field :email, placeholder: "Ваш email"
+    = f.text_area :phone, placeholder: "Ваши пожелания"
+    /input.error placeholder="телефон"
+    /input.ok placeholder="Ваш email"
   a.attach href="#"
   a.submit href="#"
-  input.hidden type="file"
-  button.hidden type="submit"
+  input.hidden name="inquiry[file]" type="file"
+  button.hidden type="submit" name="pisofshit"

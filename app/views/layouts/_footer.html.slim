@@ -1,12 +1,7 @@
 .phones
-  h2 телефоны:
-  p +7 (495) 509 4567
-  p +7 (495) 509 5678
+  = raw copywriting('footer_phones', { :phrase_type => 'wysiwyg' })
 .address
-  h2 адрес:
-  p г. Москва,
-  p пр. Независимости, д. 25/4, офис 6
-  p Индекс: 358908
-a.yt href="#"
-a.fb href="#"
+  = raw copywriting('footer_address', { :phrase_type => 'wysiwyg' })
+a.yt href="#{raw copywriting('youtube_url')}"
+a.fb href="#{raw copywriting('facebook_url')}"
 

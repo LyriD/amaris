@@ -1,0 +1,15 @@
+- content_for :bodyClass, 'feedback'
+- @inquiry = Refinery::Inquiries::Inquiry.new
+h1 Заявка на организацию мероприятия
+= form_for [refinery, :inquiries, @inquiry], :html => { :multipart => true }  do |f|
+  .formContainer
+    = f.text_field :name, placeholder: "Ваше имя", class: 'req'
+    = f.text_field :phone, placeholder: "Телефон"
+    = f.text_field :email, placeholder: "Ваш email", class: 'req email'
+    = f.text_area :message, placeholder: "Ваши пожелания", class: 'req'
+  /input.error placeholder="телефон"
+  /input.ok placeholder="Ваш email"
+  a.attach href="#"
+  a.submit href="#"
+  input.hidden name="inquiry_attach[file]" type="file"
+  button.hidden type="submit"
